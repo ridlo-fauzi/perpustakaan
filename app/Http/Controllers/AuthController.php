@@ -59,12 +59,12 @@ class AuthController extends Controller
         // Fungsi Auth::attempt() akan mencocokkan kredensial dengan data yang ada di database
         if (Auth::attempt($validatedData)) {
 
-            $request->session()->regenerate();
-            // Jika otentikasi berhasil, sesi pengguna diperbarui
-
-            return redirect()->intended('/dashboard')->with('success', 'Login berhasil! Selamat datang ' . Auth::user()->name);
-            // Tambahkan pesan flash data untuk login berhasil
-
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect()->intended('/dashboard')->with('success', 'Login berhasil! Selamat datang ' . Auth::user()->name);
+            } else {
+                return redirect()->intended('/login')->with('success', 'Login gagal !');
+            }
         } else {
             // Jika otentikasi gagal, kembali ke halaman login dengan pesan error
             return redirect('/')->with(['gagal' => 'Email atau password salah. Silakan coba lagi.']);
