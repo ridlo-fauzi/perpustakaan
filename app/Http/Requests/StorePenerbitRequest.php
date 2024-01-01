@@ -23,7 +23,7 @@ class StorePenerbitRequest extends FormRequest
     {
         return [
             'id_penerbit' => ['required', 'unique:penerbit,id_penerbit', 'max:11'],
-            'nama_penerbit' => ['required', 'max:11']
+            'nama_penerbit' => ['required', 'max:255']
         ];
     }
 }

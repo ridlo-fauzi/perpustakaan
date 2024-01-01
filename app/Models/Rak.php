@@ -14,4 +14,9 @@ class Rak extends Model
         'id_rak',
         'nama_rak'
     ];
+
+    public function buku()
+    {
+        return $this->hasMany(Buku::class, 'id_rak', 'id_rak');
+    }
 }

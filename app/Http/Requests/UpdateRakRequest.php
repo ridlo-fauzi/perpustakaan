@@ -23,6 +23,7 @@ class UpdateRakRequest extends FormRequest
     public function rules(): array
     {
         $id_rak = $this->route('rak') ? $this->route('rak')->id_rak : null;
+        dd($id_rak);
 
         return [
             'id_rak' => ['required', 'max:11', Rule::unique('rak')->ignore($id_rak, 'id_rak')->where(function ($query) use ($id_rak) {

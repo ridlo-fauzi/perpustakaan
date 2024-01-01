@@ -42,15 +42,24 @@
                                 <div class="form-group">
                                     <label for="id_category">ID Kategori</label>
                                     <input type="text" id="id_category" name="id_category" class="form-control">
+                                    @error('id_category')
+                                        <small id="id_category" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="nama_category">Nama Kategori</label>
                                     <input type="text" id="nama_category" name="nama_category" class="form-control">
+                                    @error('nama_category')
+                                        <small id="nama_category" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <input type="text" id="deskripsi" name="deskripsi" class="form-control">
+                                    @error('deskripsi')
+                                        <small id="deskripsi" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->

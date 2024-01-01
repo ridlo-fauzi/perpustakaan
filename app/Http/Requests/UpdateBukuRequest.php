@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateBukuRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class UpdateBukuRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +22,20 @@ class UpdateBukuRequest extends FormRequest
      */
     public function rules(): array
     {
+        $isbn = $this->route('buku') ? $this->route('buku')->isbn : null;
+
         return [
-            //
+            'isbn' => ['required', 'max:255', Rule::unique('buku')->ignore($isbn, 'isbn')->where(function ($query) use ($isbn) {
+                return $query->where('isbn', '=', $isbn);
+            })],
+            'judul' => ['required'],
+            'sinopsis' => ['required'],
+            'tahun_terbit' => ['required'],
+            'id_category' => ['required'],
+            'nama_penulis' => ['required'],
+            'id_penerbit' => ['required'],
+            'id_rak' => ['required'],
+            'jumlah_halaman' => ['required']
         ];
     }
 }

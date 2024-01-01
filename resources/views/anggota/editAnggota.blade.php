@@ -40,35 +40,36 @@
                             <form method="post" action="{{ route('anggota.update', $anggota['id_anggota']) }}">
                                 @method('put')
                                 @csrf
-                                @if ($errors->any())
-                                  <div class="alert alert-danger">
-                                    <div class="alert-title"><h4>Whoops!</h4></div>
-                                      There are some problems with your input.
-                                      <ul>
-                                        @foreach ($errors->all() as $error)
-                                          <li>{{ $error }}</li>
-                                        @endforeach
-                                      </ul>
-                                  </div> 
-                                @endif
                                 <div class="form-group">
                                     <label for="id_anggota">ID Anggota</label>
                                     <input type="text" id="id_anggota" name="id_anggota" value="{{ old('id_anggota', $anggota->id_anggota) }}" class="form-control @error('id_anggota') is-invalid @enderror">
+                                    @error('id_anggota')
+                                        <small id="id_anggota" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" id="nama" name="nama" value="{{ old('nama', $anggota->nama) }}" class="form-control @error('nama') is-invalid @enderror">
+                                    @error('nama')
+                                        <small id="nama" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="email" id="email" name="email" value="{{ old('email', $anggota->email) }}" class="form-control @error('email') is-invalid @enderror">
+                                    @error('email')
+                                        <small id="email" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="notelp">No Telp</label>
                                     <input type="text" id="notelp" name="notelp" value="{{ old('notelp', $anggota->notelp) }}" class="form-control @error('notelp') is-invalid @enderror">
+                                    @error('notelp')
+                                        <small id="notelp" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -79,11 +80,17 @@
                                         <option value="{{ $gender->value }}" {{ old('jenis_kelamin', $anggota->jenis_kelamin) === $gender->value ? 'selected' : '' }}>{{ $gender->value }}</option>
                                         @endforeach
                                     </select>
+                                    @error('jenis_kelamin')
+                                        <small id="jenis_kelamin" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <input type="text" id="alamat" name="alamat" value="{{ old('alamat', $anggota->alamat) }}" class="form-control @error('alamat') is-invalid @enderror">
+                                    @error('alamat')
+                                        <small id="alamat" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->

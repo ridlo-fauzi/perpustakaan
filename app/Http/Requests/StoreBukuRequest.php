@@ -22,7 +22,7 @@ class StoreBukuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'isbn' => ['required', 'unique:buku,isbn', 'max:11'],
+            'isbn' => ['required', 'unique:buku,isbn', 'max:255'],
             'judul' => ['required'],
             'sinopsis' => ['required'],
             'tahun_terbit' => ['required'],

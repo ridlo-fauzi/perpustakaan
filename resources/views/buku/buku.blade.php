@@ -54,10 +54,10 @@
                                 <tr>
                                     <td>{{ $buku->isbn }}</td>
                                     <td>{{ $buku->judul }}</td>
-                                    <td>{{ $buku->category }}</td>
-                                    <td>Linda</td>
-                                    <td>{{ $buku->id_penerbit }}</td>
-                                    <td>{{ $buku->id_rak }}</td>
+                                    <td>{{ $buku->kategori->nama_category }}</td>
+                                    <td>{{ $buku->penulis->nama_penulis }}</td>
+                                    <td>{{ $buku->penerbit->nama_penerbit }}</td>
+                                    <td>{{ $buku->rak->nama_rak }}</td>
                                     <td>
                                         <a href="{{ route('buku.edit', $buku->isbn) }}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
 

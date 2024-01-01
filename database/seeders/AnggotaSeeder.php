@@ -13,13 +13,25 @@ class AnggotaSeeder extends Seeder
      */
     public function run(): void
     {
-        Anggota::create([
-            'id_anggota' => '4001',
-            'nama' => 'Wawan',
-            'email' => 'wawan@gmail.com',
-            'notelp' => '0871111',
-            'jenis_kelamin' => 'Laki-laki',
-            'alamat' => 'Sukoharjo',
-        ]);
+        Anggota::insert(
+            [
+                [
+                    'id_anggota' => '4001',
+                    'nama' => 'Wawan',
+                    'email' => 'wawan@gmail.com',
+                    'notelp' => '08757622594',
+                    'jenis_kelamin' => 'Laki-laki',
+                    'alamat' => 'Sukoharjo',
+                ],
+                [
+                    'id_anggota' => '4002',
+                    'nama' => 'Irfan',
+                    'email' => 'irfan@gmail.com',
+                    'notelp' => '08931856722',
+                    'jenis_kelamin' => 'Laki-laki',
+                    'alamat' => 'Pacitan',
+                ]
+            ],
+        );
     }
 }

@@ -42,11 +42,16 @@
                                 <div class="form-group">
                                     <label for="id_rak">ID Rak</label>
                                     <input type="text" id="id_rak" name="id_rak" class="form-control">
+                                    @error('id_rak')
+                                        <small id="id_rak" class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                                
                                 <div class="form-group">
                                     <label for="nama_rak">Nama Rak</label>
                                     <input type="text" id="nama_rak" name="nama_rak" class="form-control">
+                                    @error('nama_rak')
+                                        <small id="nama_rak" class="form-text text-muted">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->
                                 <button type="submit" class="btn btn-primary">Simpan</button>

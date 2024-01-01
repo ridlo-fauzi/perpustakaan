@@ -15,4 +15,9 @@ class Penulis extends Model
         'nama_penulis',
         'isbn'
     ];
+
+    public function buku()
+    {
+        return $this->belongsTo(Buku::class, 'isbn', 'isbn');
+    }
 }

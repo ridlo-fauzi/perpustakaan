@@ -42,21 +42,33 @@
                                 <div class="form-group">
                                     <label for="isbn">ISBN</label>
                                     <input type="text" id="isbn" name="isbn" class="form-control">
+                                    @error('isbn')
+                                        <small id="isbn" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" id="judul" name="judul" class="form-control">
+                                    @error('judul')
+                                        <small id="judul" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sinopsis">Sinopsis</label>
                                     <textarea name="sinopsis" id="sinopsis" cols="30" rows="10" class="form-control"></textarea>
+                                    @error('sinopsis')
+                                        <small id="sinopsis" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="tahun_terbit">Tahun Terbit</label>
                                     <input type="text" name="tahun_terbit" id="tahun_terbit" class="form-control">
+                                    @error('tahun_terbit')
+                                        <small id="tahun_terbit" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -67,11 +79,17 @@
                                             <option value="{{ $kategori->id_category }}">{{ $kategori->nama_category }}</option>
                                         @endforeach
                                     </select>
+                                    @error('id_category')
+                                        <small id="id_category" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="nama_penulis">Nama Penulis</label>
                                     <input type="text" name="nama_penulis" id="nama_penulis" class="form-control">
+                                    @error('nama_penulis')
+                                        <small id="nama_penulis" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -82,6 +100,9 @@
                                             <option value="{{ $penerbit->id_penerbit }}">{{ $penerbit->nama_penerbit }}</option>
                                         @endforeach
                                     </select>
+                                    @error('id_penerbit')
+                                        <small id="id_penerbit" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -92,11 +113,17 @@
                                             <option value="{{ $rak->id_rak }}">{{ $rak->nama_rak }}</option>
                                         @endforeach
                                     </select>
+                                    @error('id_rak')
+                                        <small id="id_rak" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="jumlah_halaman">Jumlah Halaman</label>
                                     <input type="text" id="jumlah_halaman" name="jumlah_halaman" class="form-control">
+                                    @error('jumlah_halaman')
+                                        <small id="jumlah_halaman" class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->

@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->string('id_peminjaman')->primary();
-            $table->string('id_petugas');
+            $table->unsignedBigInteger('id_petugas');
             $table->string('id_anggota');
             $table->date('tanggal_pinjam');
             $table->timestamps();
+
+            $table->foreign('id_petugas')->references('id_user')->on('users');
+            $table->foreign('id_anggota')->references('id_anggota')->on('anggota');
         });
     }
 

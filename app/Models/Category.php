@@ -15,4 +15,9 @@ class Category extends Model
         'nama_category',
         'deskripsi'
     ];
+
+    public function buku()
+    {
+        return $this->hasMany(Buku::class, 'id_category', 'id_category');
+    }
 }

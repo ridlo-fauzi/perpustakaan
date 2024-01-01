@@ -51,7 +51,7 @@
                                     <label for="nama_penerbit">Nama Penerbit</label>
                                     <input type="text" id="nama_penerbit" name="nama_penerbit" class="form-control">
                                     @error('nama_penerbit')
-                                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                                        <small id="id_penerbit" class="form-text text-muted">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <!-- Tambahkan field lainnya sesuai kebutuhan -->

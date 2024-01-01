@@ -20,4 +20,24 @@ class Buku extends Model
         'jumlah_halaman',
         'id_penerbit',
     ];
+
+    public function penulis()
+    {
+        return $this->hasOne(Penulis::class, 'isbn', 'isbn');
+    }
+
+    public function rak()
+    {
+        return $this->belongsTo(Rak::class, 'id_rak', 'id_rak');
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Category::class, 'id_category', 'id_category');
+    }
+
+    public function penerbit()
+    {
+        return $this->belongsTo(Penerbit::class, 'id_penerbit', 'id_penerbit');
+    }
 }

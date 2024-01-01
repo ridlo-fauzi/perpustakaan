@@ -54,7 +54,6 @@
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('buku.index') }}">Data Buku</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('kategori.index') }}">Kategori</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('penerbit.index') }}">Penerbit</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('penulis.penulis') }}">Penulis</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('rak.index') }}">Rak</a></li>
                         </ul>
                     </li>

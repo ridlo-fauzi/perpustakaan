@@ -18,6 +18,8 @@ return new class extends Migration
             $table->decimal('nominal_denda', 10, 2);
             $table->decimal('total', 10, 2);
             $table->timestamps();
+
+            $table->foreign('id_detail_peminjaman')->references('id_detail_peminjaman')->on('detail_peminjaman');
         });
     }
 

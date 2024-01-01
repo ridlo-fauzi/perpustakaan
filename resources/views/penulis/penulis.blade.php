@@ -41,8 +41,8 @@
                             <thead>
                                 <tr>
                                     <th>ID Penulis</th>
+                                    <th>Nama Penulis</th>
                                     <th>ISBN</th>
-                                    <th>Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -50,8 +50,8 @@
                                 @foreach ($datapenulis as $penulis)
                                 <tr>
                                     <td>{{ $penulis->id_penulis }}</td>
-                                    <td>{{ $penulis->isbn }}</td>
                                     <td>{{ $penulis->nama_penulis }}</td>
+                                    <td>{{ $penulis->isbn }}</td>
                                     <td>
                                         <a href="{{ route('penulis.edit', 1) }}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
                                         <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
